@@ -1,0 +1,135 @@
+\documentclass[a4paper,12pt]{article}
+
+% Set the locale for linebreak to Thai
+\XeTeXlinebreaklocale "th"
+% In English, when TeX tries to justify text,
+% it will add some spaces between words
+% For Thai, we "must not" add any space between words
+% i.e. put "zero" space beteween words
+\XeTeXlinebreakskip = 0pt plus 0pt
+% For a bit better(?) justified output
+\sloppy
+
+% For any unicode characters, require XeTeX/XeLaTeX
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text} 
+\DeclareMathSizes{12}{14}{10}{10}
+
+% Set main fonts
+% For Thai, I recommend to scale the size to the uppercase size of latin alphabet
+%\setmainfont[Scale=MatchUppercase,Mapping=tex-text]{TH Sarabun New}
+\setmainfont{TeX Gyre Termes}				% Free Times
+
+% Sans font
+\setsansfont{TeX Gyre Heros}				% Free Helvetica
+
+% Monospace font
+\setmonofont{TeX Gyre Cursor}				% Free Courier
+
+% Because latin font in Sarabun is Sans Serif, we prefer to use Serif font
+\newfontfamily{\thaifont}[Scale=MatchUppercase,Mapping=tex-text]{TH Sarabun New}
+\newfontfamily{\latinfont}[Mapping=tex-text]{TeX Gyre Termes}
+
+% For automatic switching between languages
+\usepackage[Latin,Thai]{ucharclasses}
+% Set default font for Thai
+\setTransitionTo{Thai}{\thaifont}
+% Set default font for other characters
+\setTransitionFrom{Thai}{\latinfont}
+
+% Single spacing is too tight for Thai
+\usepackage{setspace}
+\onehalfspacing
+% Set spacing in equation
+\setlength{\jot}{10pt}
+
+% Use hyperlink in document
+\usepackage{hyperref}
+
+% TabularX for the win
+\usepackage{tabularx}
+\usepackage{tabu}
+
+% wrapfigure package
+\usepackage{wrapfig}
+
+% multirow multicolumn package
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{hhline}
+
+% For thaialph numbering \thAlph
+\usepackage{polyglossia}          
+% Set the normal language to English
+% i.e. numbering, latin characters will use English font
+\setdefaultlanguage{english}
+% When using Thai characters, the font will be automatically changed to Thai font
+\setotherlanguage{thai}
+
+% amsmath
+\usepackage{mathtools}
+
+%\AtBeginDocument\captionsthai               % Force the caption to Thai
+
+% More references in gloss-thai of polyglossia package
+% http://texdoc.net/texmf-dist/tex/latex/polyglossia/gloss-thai.ldf
+% \thaiAlpha works well, the sequence is ก ข "ฃ" ค "ฅ" ฆ ง จ ...
+% Normally, we need ก ข ค ง จ which is defined in \thaialph
+% I'm not sure why it doesn't work. So, I just re-define it.
+\def\thaialph#1{\expandafter\thalph\csname c@#1\endcsname}
+\def\thalph#1{%
+    \ifcase#1\or ก\or ข\or ค\or ง\or จ\or ฉ\or ช\or ซ\or
+    ฌ\or ญ\or ฎ\or ฏ\or ฐ\or ฑ\or ฒ\or ณ\or ด\or ต\or ถ\or ท\or ธ\or น\or
+    บ\or ป\or ผ\or ฝ\or พ\or ฟ\or ภ\or ม\or ย\or ร\or ฤ\or ล\or ฦ\or ว\or
+    ศ\or ษ\or ส\or ห\or ฬ\or อ\else ฮ\else\xpg@ill@value{#1}{thalph}\fi}
+
+% Again, re-define the sequence of Thai number.
+\def\thainum#1{\expandafter\thainumber\csname c@#1\endcsname}
+\def\thainumber#1{%
+    \thaidigits{\number#1}%
+}
+\def\thaidigits#1{\expandafter\thdigits #1@ }
+\def\thdigits#1{%
+    \ifx @#1% then terminate
+    \else
+    \ifx0#1๐\else\ifx1#1๑\else\ifx2#1๒\else\ifx3#1๓\else\ifx4#1๔\else\ifx5#1๕\else\ifx6#1๖\else\ifx7#1๗\else\ifx8#1๘\else\ifx9#1๙\else#1\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+    \expandafter\thdigits
+    \fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{listings}
+\lstset{
+    language=TeX,
+    basicstyle=\ttfamily,
+    numbers=left,
+    numberstyle=\small,
+    breaklines=true,
+    xleftmargin=.1\linewidth,
+    frame=single,
+    columns=fullflexible,
+    captionpos=b,
+    showstringspaces=false,
+}
+
+% Indent first line of paragraph
+\usepackage{indentfirst}
+
+
+% Indent lines in enumerate
+\usepackage{enumitem}
+\setenumerate{listparindent=\parindent}
+
+%\renewcommand{\thesection}{\thainum{section}}
+
+% Cleveref
+\usepackage{cleveref}
+
+% Add imageBank path
+\graphicspath{{../../imageBank/}}
+
+\begin{document}
+\includegraphics[width=2.5cm]{../../imageBank/psuBWLogo}
+\end{document}
