@@ -1,0 +1,135 @@
+\documentclass[a4paper,12pt]{article}
+
+% Set the locale for linebreak to Thai
+%\XeTeXlinebreaklocale "th"
+% In English, when TeX tries to justify text,
+% it will add some spaces between words
+% For Thai, we "must not" add any space between words
+% i.e. put "zero" space beteween words
+%\XeTeXlinebreakskip = 0pt plus 0pt
+% For a bit better(?) justified output
+%\sloppy
+
+% For any unicode characters, require XeTeX/XeLaTeX
+\usepackage{fontspec}
+\usepackage{subcaption}
+\usepackage[document]{ragged2e}
+\defaultfontfeatures{Mapping=tex-text} 
+
+% Set main fonts
+% For Thai, I recommend to scale the size to the uppercase size of latin alphabet
+%\setmainfont[Scale=MatchUppercase,Mapping=tex-text]{TH Sarabun New}
+\setmainfont{TeX Gyre Termes}				% Free Times
+
+% Sans font
+\setsansfont{TeX Gyre Heros}				% Free Helvetica
+
+% Monospace font
+\setmonofont{TeX Gyre Cursor}				% Free Courier
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+%\addto{\captionsthai}{\renewcommand{\abstractname}{รายละเอียดของโครงการโดยย่อ}}
+\renewcommand{\abstractname}{Project Overview}
+
+\usepackage{listings}
+\lstset{
+    language=TeX,
+    basicstyle=\ttfamily,
+    numbers=left,
+    numberstyle=\small,
+    breaklines=true,
+    xleftmargin=.05\linewidth,
+    frame=single,
+    columns=fullflexible,
+    captionpos=b,
+    showstringspaces=false,
+}
+
+
+
+% Any percent sign marks a comment to the end of the line
+
+% Every latex document starts with a documentclass declaration like this
+% The option dvips allows for graphics, 12pt is the font size, and article
+%   is the style
+
+\usepackage{graphicx}
+\usepackage{url}
+
+% These are additional packages for "pdflatex", graphics, and to include
+% hyperlinks inside a document.
+
+%\setlength{\oddsidemargin}{0.25in}
+%\setlength{\textwidth}{6.5in}
+%\setlength{\topmargin}{0in}
+%\setlength{\textheight}{8.5in}
+
+\usepackage{authblk}
+% Use thai separation for Thai document
+%\renewcommand\Authand{ และ }
+
+% IndentFirst line
+\usepackage{indentfirst}
+
+% Using hyperlink in document
+\usepackage{hyperref}
+
+% Using cleverref for referencing items in the document
+\usepackage{cleveref}
+
+% Wrap figure use
+\usepackage{wrapfig}
+
+% Table accommodation
+%\usepackage{array}
+\newcommand*{\thead}[1]{\textbf{#1}}
+
+%Set unnumbered section
+\setcounter{secnumdepth}{0}
+
+%Paragraph indentation settings
+\setlength{\RaggedRightParindent}{2em}
+
+\begin{document}
+
+% Everything after this becomes content
+% Replace the text between curly brackets with your own
+
+\title{Course syllabus\\ \large 988-342 Alternative Energy \& Energy conservation}
+\author{Dr. Tanwa Arpornthip}
+\date{}
+
+% You can leave out "date" and it will be added automatically for today
+% You can change the "\today" date to any text you like
+% A blank date can be given if date is not desired in the title
+
+\maketitle
+% This command causes the title to be created in the document
+
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+\begin{description}
+\item [Office] Building 6, ESSAND faculty room
+\item [Office Hours] \hfill \\
+    Monday 14:00-14:50 ESSAND meeting room \hfill\\
+    Friday 12:00-14:00 ESSAND meeting room
+\item [Email address] \href{mailto:tanwa.a@phuket.psu.ac.th}{tanwa.a@phuket.psu.ac.th}
+\item [Work phone] 076-276-435
+\item [Web page] \href{http://www.essand.psu.ac.th/ESSAND/Tanwa}{http://www.essand.psu.ac.th/ESSAND/Tanwa}
+\item [Course page] \href{http://www.essand.psu.ac.th/ESSAND/Tanwa/altEnergy}{http://www.essand.psu.ac.th/ESSAND/Tanwa/altEnergy}
+\item [Class hours] Monday, Wednesday, Friday 16:30-17:30 Room 5407A
+\end{description}
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+
+\begin{enumerate}
+    \item \textbf{Description} \hfill \\
+
+    This course explores current technology in alternative energy and energy conservation.
+    ;laskjf;lkj
+
+    asdf;laskjdfas;lkfjl;askjf
+\end{enumerate}
+
+
+\end{document}
+
+
