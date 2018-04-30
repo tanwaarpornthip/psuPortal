@@ -1,0 +1,5 @@
+# keepLogin
+
+Keep your computer logged in to the network. Use Python. Will write requirements.txt in a bit. Require Selenium and geckodriver.
+
+
