@@ -1,5 +1,5 @@
 # keepLogin
 
-Keep your computer logged in to the network. Use Python. Will write requirements.txt in a bit. Require Selenium and geckodriver.
+Keep your computer logged in to the network. Use Python. Will write requirements.txt in a bit. Require Selenium and geckodriver. The frequency of the check depends on your task scheduler.
 
 
