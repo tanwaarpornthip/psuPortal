@@ -1,11 +1,14 @@
 from splinter import Browser
 import datetime
-executable_path={'executable_path':'/usr/local/bin/chromedriver'}
 
+# User variables. Change these
 # Username and password. Clear text for now
 username = "YOUR USERNAME HERE"
 password = "YOUR PASSWORD HERE"
 logLocation = '/home/USER/log.csv'
+executable_path={'executable_path':'/usr/local/bin/chromedriver'}
+#     End of user-defined variables                            #
+################################################################
 
 def logMeIn(browser):
     browser.fill('username',username)
