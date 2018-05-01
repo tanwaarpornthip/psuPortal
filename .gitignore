@@ -1,5 +1,6 @@
 # Ignore log file
 log*
+*pycache*
 
 #vim ignore
 *.swp
