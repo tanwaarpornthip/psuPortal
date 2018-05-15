@@ -7,6 +7,9 @@ log*
 ~*
 .~*
 
+#scripts ignore credential file
+credential.txt
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

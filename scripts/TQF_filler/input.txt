@@ -1,0 +1,6 @@
+# credential file location, Absolute path only
+/home/tanwa/psuPortal/scripts/credential.txt
+# Type of TQF (TQF 3, TQF 4, TQF 5, TQF 6)
+# Only TQF 3 is implemented for now. The space between
+# TQF and number is important
+TQF 3
