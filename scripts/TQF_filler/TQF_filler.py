@@ -31,12 +31,12 @@ def mainSession(browser,inputFile):
         credentialFile.readline()
         password = credentialFile.readline()[:-1]
     print(username, password)
-    for line in inputFile:
-        if line[0] != '#':
-            print(line[:-1])
     browser.fill("ctl00$MainContent$Login1$UserName",username)
     browser.fill("ctl00$MainContent$Login1$Password",password)
     browser.find_by_id('MainContent_Login1_BtnSignin').first.click()
+    for line in inputFile:
+        if line[0] != '#':
+            print(line[:-1])
 #
 #
 #        if not(isinstance(name,list)):
