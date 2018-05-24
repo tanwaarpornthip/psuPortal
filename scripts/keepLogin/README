@@ -2,4 +2,10 @@
 
 Keep your computer logged in to the network. Use Python. Will write requirements.txt in a bit. Require Selenium and geckodriver. The frequency of the check depends on your task scheduler.
 
+For linux, run with crontab.
+
+For windows, you can run it with task scheduler by calling python and let python call the script. Or, recommended, use pyinstaller to generate an executable and use task scheduler to call on the executable. Don't forget to change the log file and the location of chromedriver before you start.
+
+For both linux and windows, you need to go download chromedriver from https://sites.google.com/a/chromium.org/chromedriver/downloads. Alternatively, you can use other browsers that you like. 
+
 
