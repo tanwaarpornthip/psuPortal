@@ -18,7 +18,7 @@ def logMeIn(browser):
 
 if __name__ == "__main__":
     now = datetime.datetime.now()
-    nowString = now.strftime('%s'); # Using Epoch time
+    nowString = now.strftime('%c'); # Using Epoch time
     
     with Browser('chrome', headless=True, incognito=True, **executable_path) as browser:
         # Visit URL

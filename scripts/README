@@ -2,3 +2,6 @@
 
 ## keepLogin
 Keep your computer login to the internet while you are on campus. Basically check login.psu.ac.th to see if you are logged out, then log you back in. If you want to automate this, I consider pairing it with some kind of timer, e.g. cron.
+### TODO
+* Should take out absolute path referral to chromedriver and force user to put chromedriver in user path.
+* Move credentials to centralized credential file
