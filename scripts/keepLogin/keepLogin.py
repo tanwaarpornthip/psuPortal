@@ -26,7 +26,7 @@ if __name__ == "__main__":
         resultString = nowString
         browser.visit(url)
         with open(logLocation,'a+') as logFile:
-            if browser.is_text_present('This computer has been authenticated'):
+            if browser.is_text_present('been authenticated'):
                 logFile.write(resultString+',True\n')
             else:
                 logFile.write(resultString+',False\n')
