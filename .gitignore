@@ -7,8 +7,8 @@ log*
 ~*
 .~*
 
-#scripts ignore credential file
-credential.txt
+#scripts ignore user config file which migh contain sensitive info
+config.ini
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
